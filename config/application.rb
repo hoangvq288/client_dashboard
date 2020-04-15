@@ -31,6 +31,6 @@ module ClientDashboard
     config.generators.system_tests = nil
     config.autoload_paths += Dir["#{Rails.root}/app"]
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
-
+    config.assets.initialize_on_precompile = false
   end
 end
