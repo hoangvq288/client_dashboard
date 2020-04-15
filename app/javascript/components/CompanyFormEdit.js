@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { Link, Redirect } from 'react-router-dom';
-const API_HOST ='http://localhost:3000/api/v1'
+const API_HOST = process.env.API_HOST || 'http://localhost:3000'
 const EDIT_COMPANY_REQUEST = 'EDIT_COMPANY_REQUEST';
 const EDIT_COMPANY_SUCCESS = 'EDIT_COMPANY_SUCCESS';
 const UPDATE_COMPANY = 'UPDATE_COMPANY';
@@ -23,7 +23,7 @@ function updateCompany(companyId, data) {
   console.log("updateCompany() action")
   return dispatch => {
     dispatch({ type: UPDATE_COMPANY});
-    return fetch(`${API_HOST}/companies/${companyId}`, {
+    return fetch(`${API_HOST}/api/v1/companies/${companyId}`, {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {

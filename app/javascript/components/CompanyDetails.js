@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { Link } from 'react-router-dom';
-const API_HOST ='http://localhost:3000/api/v1'
+const API_HOST = process.env.API_HOST || 'http://localhost:3000'
 const GET_COMPANY_REQUEST = 'GET_COMPANY_REQUEST';
 const GET_COMPANY_SUCCESS = 'GET_COMPANY_SUCCESS';
 
@@ -11,7 +11,7 @@ function getCompany(companyId) {
   console.log("getCompany() action")
   return dispatch => {
     dispatch({ type: GET_COMPANY_REQUEST});
-    return fetch(`${API_HOST}/companies/${companyId}`)
+    return fetch(`${API_HOST}/api/v1/companies/${companyId}`)
       .then(response => response.json())
       .then(json => dispatch(getCompanySuccess(json)))
       .catch(err => console.log(err));
@@ -28,6 +28,7 @@ export function getCompanySuccess(json) {
 class CompanyDetails extends React.Component {
   componentDidMount() {
     let companyId = this.props.match.params.id
+    console.log(this.props)
     this.props.getCompany(companyId)
   }
 
