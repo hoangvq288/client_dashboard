@@ -2,7 +2,8 @@ import React from "react"
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { Link } from 'react-router-dom';
-const API_HOST = process.env.API_HOST || 'http://localhost:3000'
+//const API_HOST = process.env.API_HOST || 'http://localhost:3000'
+const API_HOST = 'https://infinite-atoll-62055.herokuapp.com'
 const GET_COMPANY_REQUEST = 'GET_COMPANY_REQUEST';
 const GET_COMPANY_SUCCESS = 'GET_COMPANY_SUCCESS';
 
