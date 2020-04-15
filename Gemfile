@@ -66,6 +66,10 @@ group :development do
   gem 'grape'
   gem 'grape-entity'
   gem 'grape_on_rails_routes'
+
+  gem 'webpacker'
+  gem 'react-rails'
+  gem 'rack-cors'
 end
 
 
