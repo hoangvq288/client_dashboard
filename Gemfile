@@ -64,14 +64,15 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'grape'
-  gem 'grape-entity'
-  gem 'grape_on_rails_routes'
 
-  gem 'webpacker'
-  gem 'react-rails'
-  gem 'rack-cors'
 end
+gem 'grape'
+gem 'grape-entity'
+gem 'grape_on_rails_routes'
+
+gem 'webpacker'
+gem 'react-rails'
+gem 'rack-cors'
 
 group :production do
    gem 'pg'
